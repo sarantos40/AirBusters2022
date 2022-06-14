@@ -1,0 +1,16 @@
+#!/bin/bash -f
+mydir=/home/pi/Env
+mycmd=/home/pi/myenv.py ${mydir}/myenv.csv
+myled=/sys/class/leds/led1/brightness
+mystamp=/tmp/autoenv$$
+
+if [ -e "/proc" ] ###
+then
+    mkdir -p ${mydir}
+    cd ${mydir}
+    date >> ${mystamp}
+    tmux new-session -d -s autoenv ${mycmd}
+    tmux new-session -d -s led 'while true; do echo 0 > ${myled} ; sleep 1 ; echo 255 > ${myled} ; sleep 3 ; done'
+else
+    tmux new-session -d -s led 'while true; do echo 0 > ${myled} ; sleep 1 ; echo 255 > ${myled} ; sleep 1 ; done'
+fi
