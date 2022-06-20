@@ -1,6 +1,6 @@
 #!/bin/bash -f
 mydir=/home/pi/Env
-mycmd=/home/pi/myenv.py ${mydir}/myenv.csv
+mycmd=/home/pi/recenviro.py ${mydir}/myenv.csv
 myled=/sys/class/leds/led1/brightness
 mystamp=/tmp/autoenv$$
 

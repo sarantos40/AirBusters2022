@@ -30,5 +30,5 @@ csvalarm.py
 autoenv
 
 Παράδειγμα χρήσης:
-csvplot.py -l 2 -c 4 myenv3.csv
+csvplot.py -l time -c temperature demodata/2022-03-22-L.csv
 

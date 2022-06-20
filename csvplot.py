@@ -269,7 +269,7 @@ def mysave(fig, parts, done = True):
     if done and not args.savefig: plt.show()
     fn = fnamecompose(args.savefig, parts) if parts else args.savefig
     if args.explain > 1 and fn: sys.stderr.write('>\t' + fn + '\n')
-    if args.savefig: fig.savefig(fn, dip=args.dpi, bbox_inches='tight')
+    if args.savefig: fig.savefig(fn, dpi=args.dpi, bbox_inches='tight')
     plt.close(fig)
 
 def flushfigs():
